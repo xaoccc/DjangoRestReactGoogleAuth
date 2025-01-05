@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./components/Login.jsx";
 import Home from "./components/Home.jsx";
+import { AuthProvider } from './context/AuthContext';
 import { handleGoogleCallback } from './loader.js';
 import GoogleCallback from "./components/GoogleCallback.jsx";
 
@@ -22,7 +23,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider> 
+  );
 }
 
 export default App;
