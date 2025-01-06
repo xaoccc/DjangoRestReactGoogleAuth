@@ -22,7 +22,12 @@ export const handleGoogleCallback = async (context) => {
       const jwtData = await response.json();
       console.log(jwtData);
 
-      return redirect(`/home?jwtData=${encodeURIComponent(JSON.stringify(jwtData))}`);
+      if (!response.ok) {
+        throw new Error(jwtData.error || 'Failed to fetch JWT data');
+      }
+
+      return jwtData;
+      
     } catch (err) {
       console.error(err);
       throw new Response('Bad request', { status: 400 });

@@ -18,7 +18,7 @@ const router = createBrowserRouter([
   {
     path: "/google/callback",
     loader: handleGoogleCallback,
-    element: GoogleCallback,
+    element: <GoogleCallback />,
   },
 ]);
 
