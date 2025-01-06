@@ -1,6 +1,7 @@
 import './index.css';
 import { redirect } from 'react-router-dom';
 
+
 export const handleGoogleCallback = async (context) => {
   // Exchange callback's code for JWT tokens
 
@@ -21,7 +22,7 @@ export const handleGoogleCallback = async (context) => {
       const jwtData = await response.json();
       console.log(jwtData);
 
-      return redirect('/home');
+      return redirect(`/home?jwtData=${encodeURIComponent(JSON.stringify(jwtData))}`);
     } catch (err) {
       console.error(err);
       throw new Response('Bad request', { status: 400 });
