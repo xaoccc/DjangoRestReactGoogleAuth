@@ -1,19 +1,22 @@
-import { useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useAuth } from '../context/AuthContext';
 
 const Home = () => {
-    const location = useLocation();
-    const jwtData = new URLSearchParams(location.search).get('jwtData');
-    const parsedJwtData = jwtData ? JSON.parse(jwtData) : null;
+    const { jwtData } = useAuth();
 
-    console.log(JSON.parse(jwtData));
+    useEffect(() => {
+      if (jwtData) {
+        console.log('JWT Data:', jwtData);
+      }
+    }, [jwtData]);
 
     return (
         <section>
             <nav>
                 <img src="../../public/logo.png" alt="logo" />
             </nav>
-            {parsedJwtData ? (
-                <h2>Welcome, {parsedJwtData.user.first_name}!</h2>
+            {jwtData ? (
+                <h2>Welcome, {jwtData.user.first_name}!</h2>
             ) : (
                 <p>No JWT data found</p>
             )}

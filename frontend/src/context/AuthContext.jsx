@@ -1,12 +1,12 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [authData, setAuthData] = useState(null);
+  const [jwtData, setJwtData] = useState(null);
 
   return (
-    <AuthContext.Provider value={{ authData, setAuthData }}>
+    <AuthContext.Provider value={{ jwtData, setJwtData }}>
       {children}
     </AuthContext.Provider>
   );

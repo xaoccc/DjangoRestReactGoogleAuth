@@ -1,20 +1,21 @@
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { useNavigate, useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
 const GoogleCallback = () => {
-  const { setAuthData } = useAuth();
-  const location = useLocation();
+  const jwtData = useLoaderData(); // Get the jwtData returned from the loader
+  const { setJwtData } = useAuth();
   const navigate = useNavigate();
-  const { jwtData } = useRouteData(); // Access the jwtData from the loader
 
+  // Update context and redirect to home
   React.useEffect(() => {
     if (jwtData) {
-      setAuthData(jwtData);
-      navigate('/home');
+      setJwtData(jwtData); // Update the AuthContext with jwtData
+      navigate('/home'); // Redirect to the Home route
     }
-  }, [location.state, setAuthData, navigate]);
+  }, [jwtData, setJwtData, navigate]);
 
-  return <div>Loading...</div>;
+  return <div>Processing...</div>;
 };
 
 export default GoogleCallback;
