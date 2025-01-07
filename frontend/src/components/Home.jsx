@@ -5,9 +5,10 @@ const Home = () => {
     const { jwtData } = useAuth();
 
     useEffect(() => {
-        if (jwtData) {
-            console.log('JWT Data:', jwtData);
-        }
+        // Debug
+        // if (jwtData) {
+        //     console.log('JWT Data:', jwtData);
+        // }
     }, [jwtData]);
 
     return (
