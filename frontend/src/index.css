@@ -3,6 +3,10 @@
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
+#root {
+    width: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -60,6 +64,20 @@ h1 {
     line-height: 1.1;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    width: 100%;
+    max-width: 30rem;
+}
+
+input {
+    padding: 0.6em 1.2em;
+    font-size: 1.25em;
+    border-radius: 8px;
+}
+
 button {
     border-radius: 8px;
     border: 1px solid transparent;
@@ -99,6 +117,9 @@ button:focus-visible {
     background: url('../public/404.png');
     background-repeat: no-repeat;
 }
+
+/* Registration */
+
 
 @media (prefers-color-scheme: light) {
     :root {
