@@ -1,7 +1,8 @@
 const appRoutes = {
     INDEX: '/',
     LOGIN: '/login',   
-    REGISTER: '/register',
+    REGISTER: '/register',   
+    VERIFICATION: '/verification',   
     LOGOUT: '/logout',
     HOME: '/home',
     GOOGLE_CALLBACK: '/google/callback',
