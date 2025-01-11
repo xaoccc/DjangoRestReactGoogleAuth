@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import appRoutes from '../core/routes/routes.js';
 
 export default function Register() {
     const [email, setEmail] = useState('');
@@ -19,7 +20,7 @@ export default function Register() {
             const res = await axios.post(route, { email, password1, password2 });
             // Debug
             console.log(res);
-            navigate('/verification');
+            navigate(appRoutes.VERIFICATION);
         }
 
         catch (error) {
