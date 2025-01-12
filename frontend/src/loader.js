@@ -20,7 +20,7 @@ export const handleGoogleCallback = async (context) => {
 
             const jwtData = await response.json();
             // Debug
-            // console.log(jwtData);
+            console.log(jwtData);
 
             if (!response.ok) {
                 throw new Error(jwtData.error || 'Failed to fetch JWT data');

@@ -194,13 +194,13 @@ SOCIALACCOUNT_EMAIL_AUTHENTICATION = True
 SOCIALACCOUNT_EMAIL_AUTHENTICATION_AUTO_CONNECT = True
 SOCIALACCOUNT_PROVIDERS = {
     "google": {
-        "APPS": [
+        "APP": 
             {
                 "client_id": GOOGLE_OAUTH_CLIENT_ID,
                 "secret": GOOGLE_OAUTH_CLIENT_SECRET,
                 "key": "",
             },
-        ],
+        "JWT_LEEWAY": 10,
         "SCOPE": ["profile", "email"],
         "AUTH_PARAMS": {
             "access_type": "online",
