@@ -5,6 +5,8 @@ const appRoutes = {
     VERIFICATION: '/verification',   
     LOGOUT: '/logout',
     HOME: '/home',
+    ABOUT: '/about',
+    CONTACT: '/contact',
     GOOGLE_CALLBACK: '/google/callback',
     UNKNOWN: '*',
 }

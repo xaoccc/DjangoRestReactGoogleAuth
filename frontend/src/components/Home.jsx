@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
+import NavBar from './NavBar.jsx'; 
 
 const Home = () => {
     const { jwtData } = useAuth();
@@ -13,30 +14,7 @@ const Home = () => {
 
     return (
         <section>
-            <nav>
-                <img src="../../public/logo.png" alt="logo" />
-                <ul>
-                    {jwtData ? (
-                        <>
-                            <li>
-                                <a href="/contact">Contact</a>
-                            </li>
-                            <li>
-                                <a href="/aboutus">About Us</a>
-                            </li>
-                            <li>
-                                <a href="/logout">Logout</a>
-                            </li>
-                        </>
-                    ) : (
-                        <li>
-                            <a href="/">Login</a>
-                        </li>
-                    )}
-
-
-                </ul>
-            </nav>
+            <NavBar />
             {jwtData ? (
                 <h2>Welcome, {jwtData.user.first_name}!</h2>
             ) : (
